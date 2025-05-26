@@ -1,0 +1,99 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Ubuntu", sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(to right, #00c6ff, #0072ff);
+    color: #fdfdfd;
+}
+
+.hide {
+    display: none;
+}
+
+.container {
+    background-color: rgba(63, 140, 143, 0.76);
+    box-shadow: #000 0px 0px 12px;
+    border-radius: 25px;
+    padding: 60px;
+}
+
+/*Form*/
+h3{
+    margin-bottom: 20px;
+}
+.form-input-container {
+    display: flex;
+}
+.form input {
+    padding: 15px;
+    border: none;
+    flex: 1;
+    border-radius: 4px;
+}
+
+.form button {
+    padding: 15px;
+    min-width: 50px;
+    margin-left: 8px;
+    background-color: #68c0f0;
+    color: #FFF;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/*Prev*/
+#dados-prev-tempo {
+    border-top: solid 1px #FFF;
+    margin-top: 25px;
+    padding-top: 25px;
+    text-align: center;
+}
+
+#dados-prev-tempo h2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+#dados-prev-tempo h2 i {
+   font-size: 1rem;
+}
+
+#dados-prev-tempo span {
+    margin: 0.6rem;
+}
+
+#bandeira{
+    height: 30px;
+}
+
+#clima-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0;
+
+}
+
+.info-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.info-container #umidade {
+    border-right: 1px solid #FFF;
+    margin: 0.6rem;
+    padding: 0.6rem;
+}
