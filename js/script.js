@@ -57,5 +57,4 @@ const mostrarDadosPrev = async (cidade) => {
     ventoElemento.innerText = parseInt(dados.wind.speed) + 'km'
 
     hideDados.classList.remove("hide")
-    console.log(dados)
 }
