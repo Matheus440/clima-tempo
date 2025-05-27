@@ -13,6 +13,8 @@ const climaIconElemento = document.querySelector("#clima-icon")
 const umidadeElemento = document.querySelector("#umidade span")
 const ventoElemento = document.querySelector("#vento span")
 
+const hideDados = document.querySelector("#dados-prev-tempo")
+
 
 //Eventos
 btnBusca.addEventListener("click", (e) => {
@@ -21,6 +23,14 @@ btnBusca.addEventListener("click", (e) => {
     const cidade = cidadeInput.value
 
     mostrarDadosPrev(cidade)
+})
+
+cidadeInput.addEventListener("keyup", (e) => {
+    if(e.code === "Enter") {
+        const cidade = e.target.value
+
+        mostrarDadosPrev(cidade)
+    }
 })
 
 
@@ -32,10 +42,20 @@ const dadosPrev = async(cidade) => {
     const res = await fetch(urlWeatherApi)
     const dados = await res.json()
 
-    console.log(dados)
-
+    return dados
 }
 
-const mostrarDadosPrev = (cidade) => {
-    dadosPrev(cidade)
+const mostrarDadosPrev = async (cidade) => {
+    const dados = await dadosPrev(cidade)
+
+    cidadeElemento.innerText = dados.name
+    tempElemento.innerText = parseInt(dados.main.temp)
+    climaElemento.innerText = dados.weather[0].description
+    climaIconElemento.setAttribute("src", `http://openweathermap.org/img/wn/${dados.weather[0].icon}.png`)
+    bandeiraElemento.setAttribute("src", `https://flagsapi.com/${dados.sys.country}/flat/64.png`)
+    umidadeElemento.innerText = `${dados.main.humidity}%`
+    ventoElemento.innerText = parseInt(dados.wind.speed) + 'km'
+
+    hideDados.classList.remove("hide")
+    console.log(dados)
 }
