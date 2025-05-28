@@ -12,6 +12,20 @@ body {
     height: 100vh;
     background: linear-gradient(to right, #00c6ff, #0072ff);
     color: #fdfdfd;
+    
+}
+
+#img-back {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+div#img-back img {
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
 }
 
 .hide {
@@ -19,10 +33,11 @@ body {
 }
 
 .container {
-    background-color: rgba(84, 127, 167, 0.733);
+    background-color: rgba(84, 127, 167, 0.932);
     box-shadow: #000 0px 0px 12px;
     border-radius: 25px;
     padding: 60px;
+    ;
 }
 
 /*Form*/
